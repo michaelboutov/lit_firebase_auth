@@ -22,7 +22,7 @@ dependencies:
   # state
   dartz: ^0.9.1
   provider: ^5.0.0
-  state_notifier: ^0.6.0
+  state_notifier: ^0.7.0
   flutter_state_notifier: ^0.7.0
   # ui
   flushbar: ^1.10.4
