@@ -13,7 +13,7 @@ dependencies:
     sdk: flutter
   # auth
   firebase_core: ^1.0.2
-  firebase_auth: ^1.0.1
+  firebase_auth: ^3.0.2
   google_sign_in: ^5.0.1
   firebase_auth_oauth: ^1.0.1
   # annotation
