@@ -7,10 +7,10 @@ const double smallNotificationWidth = 300;
 const Duration notificationDuration = Duration(seconds: 3);
 
 class NotificationHelper {
-  static Flushbar error({
-    @required String message,
-    @required NotificationConfig config,
-    @required BuildContext context,
+  Flushbar error({
+    required String message,
+    required NotificationConfig config,
+    required BuildContext context,
   }) {
     final isPhone = isPhoneSize(MediaQuery.of(context).size);
     final width = isPhone ? null : smallNotificationWidth;
@@ -52,9 +52,9 @@ class NotificationHelper {
   }
 
   static Flushbar success({
-    @required String message,
-    @required NotificationConfig config,
-    @required BuildContext context,
+    required String message,
+    required NotificationConfig config,
+    required BuildContext context,
   }) {
     final isPhone = isPhoneSize(MediaQuery.of(context).size);
     final width = isPhone ? null : smallNotificationWidth;
@@ -196,21 +196,21 @@ class NotificationConfig {
   final Color routeColor;
 
   const NotificationConfig({
-    this.title,
-    this.titleText,
+    required this.title,
+    required this.titleText,
     this.backgroundColor = const Color(0xFF303030),
-    this.leftBarIndicatorColor,
-    this.boxShadows,
-    this.backgroundGradient,
-    this.icon,
+    required this.leftBarIndicatorColor,
+    required this.boxShadows,
+    required this.backgroundGradient,
+    required this.icon,
     this.shouldIconPulse = true,
-    this.duration,
+    required this.duration,
     this.isDismissible = true,
-    this.maxWidth,
+    required this.maxWidth,
     this.margin = const EdgeInsets.all(0.0),
     this.padding = const EdgeInsets.all(16),
     this.borderRadius = 0.0,
-    this.borderColor,
+    required this.borderColor,
     this.borderWidth = 1.0,
     this.flushbarPosition = FlushbarPosition.BOTTOM,
     this.dismissDirection = FlushbarDismissDirection.VERTICAL,
@@ -220,7 +220,7 @@ class NotificationConfig {
     this.animationDuration = const Duration(seconds: 1),
     this.barBlur = 0.0,
     this.blockBackgroundInteraction = false,
-    this.routeBlur,
-    this.routeColor,
+    required this.routeBlur,
+    required this.routeColor,
   });
 }

@@ -13,8 +13,8 @@ import 'sign_in_handler_state.dart';
 class SignInHandlerStateNotifier extends StateNotifier<SignInHandlerState>
     with LocatorMixin {
   SignInHandlerStateNotifier({
-    @required AuthProviders authProviders,
-    @required AuthFacade authFacade,
+    required AuthProviders authProviders,
+    required AuthFacade authFacade,
   })  : assert(authProviders != null),
         assert(authFacade != null),
         _authProviders = authProviders,

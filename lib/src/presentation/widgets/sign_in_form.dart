@@ -9,7 +9,7 @@ import '../../application/auth/sign_in_handler/sign_in_handler_state.dart';
 /// Should be used in conjunction with [EmailTextFormField] and
 /// [PasswordTextFormField]
 class SignInForm extends StatelessWidget {
-  const SignInForm({Key key, @required this.child})
+  const SignInForm({Key? key, required this.child})
       : assert(child != null),
         super(key: key);
 

@@ -27,8 +27,8 @@ class TextFieldConfig {
   final InputDecoration inputDecoration;
 
   TextFieldConfig({
-    this.style,
-    this.inputDecoration,
+    required this.style,
+    required this.inputDecoration,
   });
 }
 

@@ -11,8 +11,8 @@ import 'widgets/sign_in_text_fields.dart';
 
 class StandardSignInWidget extends StatelessWidget {
   const StandardSignInWidget({
-    Key key,
-    this.config,
+    Key? key,
+    required this.config,
   }) : super(key: key);
 
   final AuthConfig config;
@@ -118,7 +118,7 @@ class StandardSignInWidget extends StatelessWidget {
                   config: config?.twitterButton,
                 ),
               ),
-            const LoadingWidget(),
+            LoadingWidget(),
           ],
         ),
       ),

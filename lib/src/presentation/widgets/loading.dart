@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import '../../application/auth/sign_in_handler/sign_in_handler_state.dart';
 
 class LoadingWidget extends StatelessWidget {
-  const LoadingWidget({Key key}) : super(key: key);
+  const LoadingWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

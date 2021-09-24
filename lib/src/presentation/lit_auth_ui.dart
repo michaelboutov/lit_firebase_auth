@@ -26,10 +26,10 @@ class LitAuthState extends StatelessWidget {
   /// `final user = context.watch<User>();`
   /// Which will listen to the current [LitUser] object.
   const LitAuthState({
-    Key key,
-    @required this.authenticated,
-    @required this.unauthenticated,
-    this.unintialized,
+    Key? key,
+    required this.authenticated,
+    required this.unauthenticated,
+    required this.unintialized,
   }) : super(key: key);
 
   /// The widget to be displayed when authenticated
@@ -141,11 +141,11 @@ class LitAuth extends StatelessWidget {
   /// {@end-tool}
   ///
   const LitAuth({
-    Key key,
-    this.config,
-    this.onAuthSuccess,
-    this.onAuthFailure,
-    this.errorNotification = const NotificationConfig(),
+    Key? key,
+    required this.config,
+    required this.onAuthSuccess,
+    required this.onAuthFailure,
+    this.errorNotification = const NotificationConfig(backgroundGradient: Gradient(colors: List<Colors>), borderColor: null, boxShadows: [], duration: null, icon: null, leftBarIndicatorColor: null, maxWidth: null, routeBlur: null, routeColor: null, title: '', titleText: null),
     this.successNotification = const NotificationConfig(),
   }) : super(key: key);
 
@@ -194,13 +194,13 @@ class LitAuth extends StatelessWidget {
 
 class _SignInBuilder extends StatelessWidget {
   const _SignInBuilder({
-    Key key,
-    @required this.onAuthFailure,
-    @required this.onAuthSuccess,
-    this.builder,
-    @required this.errorNotification,
-    @required this.successNotification,
-    this.child,
+    Key? key,
+    required this.onAuthFailure,
+    required this.onAuthSuccess,
+    required this.builder,
+    required this.errorNotification,
+    required this.successNotification,
+    required this.child,
   }) : super(key: key);
 
   final VoidCallback onAuthSuccess;
@@ -218,10 +218,10 @@ class _SignInBuilder extends StatelessWidget {
         auth?.map(
           success: (_) {
             if (onAuthSuccess != null) {
-              WidgetsBinding.instance
+              WidgetsBinding.instance!
                   .addPostFrameCallback((_) => onAuthSuccess());
             }
-            WidgetsBinding.instance.addPostFrameCallback(
+            WidgetsBinding.instance!.addPostFrameCallback(
               (_) {
                 NotificationHelper.success(
                         message: 'Signed in',
@@ -233,10 +233,10 @@ class _SignInBuilder extends StatelessWidget {
           },
           failure: (f) {
             if (onAuthFailure != null) {
-              WidgetsBinding.instance
+              WidgetsBinding.instance!
                   .addPostFrameCallback((_) => onAuthFailure(f.failure));
             }
-            WidgetsBinding.instance.addPostFrameCallback(
+            WidgetsBinding.instance!.addPostFrameCallback(
               (_) => NotificationHelper.error(
                 context: context,
                 config: errorNotification,
@@ -285,9 +285,9 @@ class _SignInBuilder extends StatelessWidget {
 
 class _LitAuthCustom extends LitAuth {
   const _LitAuthCustom({
-    Key key,
+    Key? key,
     VoidCallback onAuthSuccess,
-    AuthFailureCallback onAuthFailure,
+    AuthFailureCallback? onAuthFailure,
     NotificationConfig errorNotification = const NotificationConfig(),
     NotificationConfig successNotification = const NotificationConfig(),
     this.builder,

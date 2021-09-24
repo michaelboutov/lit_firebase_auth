@@ -33,11 +33,10 @@ import '../infrastructure/firebase_auth_facade.dart';
 /// is enabled.
 class LitAuthInit extends StatelessWidget {
   const LitAuthInit({
-    Key key,
+    Key? key,
     this.authProviders = const AuthProviders(),
-    @required this.child,
-  })  : assert(child != null),
-        super(key: key);
+    required this.child,
+  }) : super(key: key);
 
   /// Specify the authentication providers that should be enabled for this
   /// application. By default only email and password authentication is enabled.
